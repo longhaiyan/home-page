@@ -2,27 +2,34 @@ import React from 'react';
 import styles from './index.css';
 
 class Index extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      width:document.body.clientWidth,
+      height:document.body.clientHeight
+    }
+  }
   draw() {
     const canvas = document.getElementById("J_canvas");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
-      const goldPoiont = 889
-      const width = document
+      const goldPoiont = parseInt(this.state.width * 0.618, 10)
+      
 
       ctx.fillStyle = "#FFA500"
       ctx.beginPath();
       ctx.moveTo(0, 0);
       ctx.lineTo(goldPoiont, 0);
-      ctx.lineTo(1440 - goldPoiont, 789);
-      ctx.lineTo(0, 789);
+      ctx.lineTo(this.state.width - goldPoiont, this.state.height);
+      ctx.lineTo(0, this.state.height);
       ctx.fill();
 
       ctx.fillStyle = "#dd4a68"
       ctx.beginPath();
       ctx.moveTo(goldPoiont, 0);
-      ctx.lineTo(1440, 0);
-      ctx.lineTo(1440, 789);
-      ctx.lineTo(1440 - goldPoiont, 789);
+      ctx.lineTo(this.state.width, 0);
+      ctx.lineTo(this.state.width, this.state.height);
+      ctx.lineTo(this.state.width - goldPoiont, this.state.height);
       ctx.fill();
 
       // ctx.beginPath();
@@ -39,7 +46,7 @@ class Index extends React.Component {
   render() {
     return (
     <div>
-      <canvas id="J_canvas" width="1440px" height="789px"></canvas>
+      <canvas id="J_canvas" width={ this.state.width+'px'} height={ this.state.height + 'px'}></canvas>
     </div>
     );
   }
