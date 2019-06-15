@@ -46,10 +46,19 @@ class Canvas extends React.Component {
   }
 }
 
+class Avatar extends React.Component {
+  render (){
+    return (
+      <div className={styles.avatar}></div>
+    )
+  }
+}
+
 class Index extends React.Component {
   render() {
     return (
     <div>
+      <Avatar/>
       <Canvas/>
     </div>
     );
