@@ -14,9 +14,8 @@ class Canvas extends React.Component {
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
       const goldPoiont = parseInt(this.state.width * 0.618, 10)
-      
 
-      ctx.fillStyle = "#FFA500"
+      ctx.fillStyle = "#b8cccd"
       ctx.beginPath();
       ctx.moveTo(0, 0);
       ctx.lineTo(goldPoiont, 0);
@@ -24,7 +23,7 @@ class Canvas extends React.Component {
       ctx.lineTo(0, this.state.height);
       ctx.fill();
 
-      ctx.fillStyle = "#dd4a68"
+      ctx.fillStyle = "#c4d0b8"
       ctx.beginPath();
       ctx.moveTo(goldPoiont, 0);
       ctx.lineTo(this.state.width, 0);
@@ -53,6 +52,7 @@ class Avatar extends React.Component {
     )
   }
 }
+
 
 class Index extends React.Component {
   render() {
