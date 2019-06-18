@@ -36,10 +36,15 @@ class Canvas extends React.Component {
   componentDidMount() {
     this.draw()
   }
+
+  handleMouseDown(e) {
+    console.log('this is:', e.clientX);
+  }
+
   render() {
     return (
     <>
-      <canvas id="J_canvas" width={ this.state.width+'px'} height={ this.state.height + 'px'}></canvas>
+      <canvas id="J_canvas" onMouseDown={(e)=>this.handleMouseDown(e)} width={ this.state.width+'px'} height={ this.state.height + 'px'}></canvas>
     </>
     );
   }
