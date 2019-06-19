@@ -38,7 +38,7 @@ class Canvas extends React.Component {
   }
 
   handleMouseDown(e) {
-    console.log('this is:', e.clientX);
+    console.log('this is:', e.clientX, e.clientY);
   }
 
   render() {
