@@ -6,7 +6,7 @@ class Canvas extends React.Component {
     super(props)
     this.state = {
       width:document.body.clientWidth,
-      height:document.body.clientHeight
+      height:document.body.clientHeight,
     }
   }
   draw() {
@@ -38,7 +38,17 @@ class Canvas extends React.Component {
   }
 
   handleMouseDown(e) {
-    console.log('this is:', e.clientX, e.clientY);
+    console.log('this is:', this.isLeft(e));
+    
+  }
+  
+  isLeft({clientX, clientY}){
+    let width = this.state.width
+    let height = this.state.height
+    let target = (height - clientY) * width * (0.618 * 2 -1) / height + width * (1 - 0.618)
+    console.log(clientX,clientY, width, height , target + width * (1 - 0.618))
+
+    return clientX < target
   }
 
   render() {
