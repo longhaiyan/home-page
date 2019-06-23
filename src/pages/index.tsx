@@ -51,13 +51,12 @@ class Canvas extends React.Component {
           ctx.lineTo(0, this.state.height);
           ctx.fill();
         if((this.state.width - goldPoiont + (add * i)) > this.state.width){
-          console.log("清除时间戳")
           clearInterval(timer)
         } else {
           i++;
         }
         
-      }, 20)
+      }, 10)
 
     }
   }
@@ -78,14 +77,13 @@ class Canvas extends React.Component {
         ctx.lineTo(this.state.width - goldPoiont - (add * i), this.state.height);
         ctx.fill();
 
-        if(this.state.width - goldPoiont - (add * i) > 0){
-          console.log("清除时间戳")
+        if(goldPoiont - (add * i) < 0){
           clearInterval(timer)
         } else {
           i++;
         }
         
-      }, 20)
+      }, 10)
 
     }
   }
