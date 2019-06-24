@@ -120,9 +120,19 @@ class Canvas extends React.Component {
 }
 
 class Avatar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      avatarClick: false
+    }
+  }
+
+  handleClick(){
+
+  }
   render (){
     return (
-      <div className={styles.avatar}></div>
+      <div className={styles.avatar} onClick={(e)=>this.handleClick()}></div>
     )
   }
 }
