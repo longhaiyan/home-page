@@ -1,0 +1,29 @@
+.avatar{
+  width: 100px;
+  height: 100px;
+  background: #4f5a5e;
+  border-radius: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes big{
+from {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  opacity: 1;
+}
+to {
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  opacity: 0;
+}
+}
+
+.avatarAnimate{
+  animation: big 1s;
+}
